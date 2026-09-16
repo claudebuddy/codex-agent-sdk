@@ -1,0 +1,8 @@
+node_modules/
+dist/
+codex/
+.zhipinclaw/
+zhipinclaw/
+.DS_Store
+*.log
+.env

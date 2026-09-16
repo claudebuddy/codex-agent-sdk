@@ -1,0 +1,73 @@
+{
+  "name": "@claudebuddy/codex-agent-sdk",
+  "version": "0.1.0",
+  "description": "Claude Agent SDK style TypeScript SDK on top of the Codex app-server JSON-RPC protocol.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./protocol": {
+      "types": "./dist/protocol/index.d.ts",
+      "import": "./dist/protocol/index.js"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/claudebuddy/codex-agent-sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/claudebuddy/codex-agent-sdk/issues"
+  },
+  "homepage": "https://github.com/claudebuddy/codex-agent-sdk#readme",
+  "license": "Apache-2.0",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build",
+    "dev": "tsc --watch",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test tests/*.test.ts",
+    "example:01": "tsx examples/01-simple-query.ts",
+    "example:02": "tsx examples/02-multi-turn.ts",
+    "example:03": "tsx examples/03-streaming.ts",
+    "example:04": "tsx examples/04-custom-tools.ts",
+    "example:05": "tsx examples/05-permissions.ts",
+    "example:06": "tsx examples/06-mcp-tools.ts",
+    "example:07": "tsx examples/07-gateway.ts",
+    "example:08": "tsx examples/08-morph1-real-codex.ts"
+  },
+  "keywords": [
+    "codex",
+    "agent",
+    "sdk",
+    "json-rpc",
+    "app-server",
+    "claude-agent-sdk"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "zod": "^3.23.8",
+    "zod-to-json-schema": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/ws": "^8.18.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "ws": "^8.21.3"
+  }
+}
